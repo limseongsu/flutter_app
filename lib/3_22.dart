@@ -38,7 +38,7 @@ void main() {
   String name3 = ''; //아무것도 없는 0개의 문자
   String name4; // null
 
-  double tax = 1.1;   //세금
+ final double tax = 1.1;   //세금   // final을 붙히면 변경을 불가하게됨 = 상수
   int fax = 5;    //팩스 가격 (5.5)
   print('5만원짜리를 4만원으로 할인합니다.');
   fax = 4;
