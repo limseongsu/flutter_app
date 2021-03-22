@@ -44,8 +44,15 @@ void main() {
   fax = 4;
   print('팩스의 새로운 가격은(세금포함) ${fax * tax}만원!');
     //4.4
+second();
+}
 
-
+void second() {
+  // main을 분리하여 사용할 수 있다.
 
 }
 
+
+void three() {
+  https://yujin-dev.tistory.com/53
+}
