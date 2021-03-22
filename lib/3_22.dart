@@ -1,4 +1,4 @@
-
+import 'dart:math'; // import 문 : 수학관련된 패키지를 사용 선언
 
 // main 메서드 또는 함수라고 부름
 void main() {
@@ -51,6 +51,8 @@ void main() {
 
   //https://yujin-dev.tistory.com/53
 
+
+
   var names = [
     '한석봉',
     '심사임당',
@@ -86,4 +88,15 @@ void main() {
   }
   // shift + F6를 누르면 같은글자 ex)a가 6개있으면(같은 void안) 다 같이 편집이
   // 가능하게 바뀐다.
+  dice();
+}
+
+// 주사위
+void dice() {
+ // 1~6
+  var random = new Random();
+  print(random.nextInt(6) + 1);
+  // 랜덤한 숫자를 사용할 때 int randomNumber = random.nextInt(100); // from 0 up to 99 included
+  //                       int randomNumber = random.nextInt(90) + 10; // from 10 up to 99 included
+  //new OOO(); : OOO();를 사용하는 코드 앞에 new 를 붙여야하지만, dart 에서 생략이 가능하다.
 }
