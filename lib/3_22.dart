@@ -97,6 +97,6 @@ void dice() {
   var random = new Random();
   print(random.nextInt(6) + 1);
   // 랜덤한 숫자를 사용할 때 int randomNumber = random.nextInt(100); // from 0 up to 99 included
-  //                       int randomNumber = random.nextInt(90) + 10; // from 10 up to 99 included
+  //                       int randomNumber = random.nextInt(90) + 10; // from 10 up to 109 included
   //new OOO(); : OOO();를 사용하는 코드 앞에 new 를 붙여야하지만, dart 에서 생략이 가능하다.
 }
