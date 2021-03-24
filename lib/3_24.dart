@@ -1,6 +1,5 @@
 //List
 
-import 'dart:html';
 
 void main() {
   //int kor = 100; int math = 50;  int english = 70;  int science = 30;
