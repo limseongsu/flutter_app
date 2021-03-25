@@ -29,12 +29,13 @@ class Hero {
 
 class Cleric {
   String name;
-  int hp = 50;
-  int mp = 10;
-  final int maxHp = 50;
-  final int maxMp = 10;
+  double hp = 50;
+  double mp = 10;
+  final double maxHp = 50;
+  final double maxMp = 10;
+
   void now() {
-    print('$hp');
+    print('$hp');  //현재 체력과 현재 마나보유량
     print('$mp');
   }
 
@@ -45,10 +46,8 @@ class Cleric {
     } else {
       mp = mp - 5;
       hp = maxHp;
-
     }
   }
-
   void pray() {
 
   }
