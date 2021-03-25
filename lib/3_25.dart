@@ -11,6 +11,7 @@ void main() {
   Cleric cleric = Cleric();
   cleric.name = '성직자';
   cleric.selfAid();
+  cleric.now();
 }
 
 // Hero 타입을 새로 작성
@@ -32,6 +33,10 @@ class Cleric {
   int mp = 10;
   final int maxHp = 50;
   final int maxMp = 10;
+  void now() {
+    print('$hp');
+    print('$mp');
+  }
 
   void selfAid() {
     print('이기적인 힐');
@@ -41,8 +46,6 @@ class Cleric {
       mp = mp - 5;
       hp = maxHp;
 
-      print('$hp');
-      print('$mp');
     }
   }
 
