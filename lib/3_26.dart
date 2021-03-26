@@ -6,7 +6,10 @@ void main() {
   // 생성자를 통한 초기화   인스턴스
   // 불의검을 생성   인스턴스
   Hero hero = Hero('홍길동', 50);
+  Hero hero2 = Hero('베트맨', 50);
   Sword sword = Sword('불의검', 100, 500, '불을 내뿜는다');
+
+  Hero.money = Hero.money - 10; //공용자원 static 이여서 hero 개인이아닌 Hero 클래스사용
 
   // 홍길동한테 불의검 주기
   hero.sword = sword;
