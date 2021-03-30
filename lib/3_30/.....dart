@@ -1,12 +1,12 @@
 void main() {
+
   Exam exam = Exam();
-  print(exam.solution('C'));
-  print(exam.solution('X'));
+  print(exam.solution('S'));
 }
 
 class Exam {
-  int solution(String eng) {
-    int answer = 0;
+  int solution(String s) {
+    int result = 0;
     List<String> list = [
       'A',
       'B',
@@ -35,14 +35,11 @@ class Exam {
       'Y',
       'Z'
     ];
-
-
     for (int i = 0; i < list.length; i++) {
-      if (eng == list[i]) {
-        answer = i + 1;
+      if (s == list[i]) {
+        result = i + 1;
       }
-
     }
-    return answer;
+    return result;
   }
 }
