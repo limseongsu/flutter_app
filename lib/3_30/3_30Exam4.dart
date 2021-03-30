@@ -2,8 +2,7 @@ import 'package:flutter_app/3_30/3_30.dart';
 
 void main() {
   Exam exam = Exam();
- print(exam.solution(1));
-
+  print(exam);
 }
 
 class Exam{
