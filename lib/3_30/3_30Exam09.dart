@@ -32,7 +32,7 @@ class Exam {
     String result = '';
     int cm = 10 * 1;
     int m = cm * 100;
-    int km = m * 100;
+    int km = m * 1000;
     if (s == 'km') {
       result = '${n * km}';
     } else if (s == 'm') {

@@ -3,7 +3,7 @@ void main() {
   Exam exam = Exam();
   print(exam.soultion(10, 3));
   print(exam.soultion(100, 30));
-  print(exam.soultion(10, 30));
+  print(exam.soultion(40, 30));
 
 
 }

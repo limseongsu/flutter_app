@@ -2,6 +2,7 @@ void main() {
 
   Exam exam = Exam();
   print(exam.solution('S'));
+  print(exam.solution('W'));
 }
 
 class Exam {
@@ -43,3 +44,8 @@ class Exam {
     return result;
   }
 }
+// class Exam {
+//   int solution(String alphabet) {
+//     return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.indexOf(alphabet) + 1;
+//   }
+// }

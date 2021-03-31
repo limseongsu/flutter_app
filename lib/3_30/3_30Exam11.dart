@@ -35,3 +35,4 @@ class Exam{
 //     return answer;
 //   }
 // }
+// abs();  를 사용하면 절대값으로 치환

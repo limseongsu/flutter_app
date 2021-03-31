@@ -11,10 +11,10 @@ class Exam {
 
     int a = m;
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 9; i++) {
       a += n;
 
-      result += '$a';
+      result += ' $a';
     }
     return result;
   }
