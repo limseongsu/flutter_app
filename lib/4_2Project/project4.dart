@@ -1,9 +1,11 @@
- void main() {
+// 숫자판별
+
+void main() {
   Exam exam = Exam();
   print(exam.solution(4444));
   print(exam.solution(3353));
-
 }
+
 class Exam {
   String solution(int n) {
     String result = n.toString();

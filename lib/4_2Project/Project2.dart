@@ -1,3 +1,6 @@
+// 등차수열
+
+
 void main() {
   Exam exam = Exam();
   print(exam.solution(3, 3));
@@ -17,3 +20,4 @@ class Exam {
     return result;
   }
 }
+
