@@ -12,7 +12,7 @@ void q1() {
   int weight = 60;
   int age1 = 20;
   int age2 = 30;
-  int age = 1;
+  int age;
 
   if (weight == 60) {
     print('weight는 60입니다.');
