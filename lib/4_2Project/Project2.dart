@@ -1,8 +1,6 @@
-import 'dart:math';
-// 등차수열
 void main() {
   Exam exam = Exam();
-  print(exam.solution(5, 3));
+  print(exam.solution(3, 3));
 }
 
 class Exam {
