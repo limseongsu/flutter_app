@@ -9,7 +9,7 @@ void main() {
 class Exam {
   String solution(int n) {
     String result = n.toString();
-    for (int i = 0; i < result.length - 1; i++) {
+    for (int i = 0; i < result.length - 1 ; i++) {
       if (result[i] != result[i + 1]) {
         result = 'No';
         break;
