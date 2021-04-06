@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_app/4_5/image.text.dart';
 
 void main() => runApp(MyApp());
 
@@ -109,56 +110,11 @@ class _Page1State extends State<Page1> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            GestureDetector(
-              onTap: () {
-                print('클릭!');
-                _showDialog();
-              },
-              child: Column(
-                children: [
-                  Image.network(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                  Text('택시'),
-                ],
-              ),
-            ),
-            Column(
-              children: [
-                Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
-                ),
-                Text('택시'),
-              ],
-            ),
-            Column(
-              children: [
-                Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
-                ),
-                Text('택시'),
-              ],
-            ),
-            Column(
-              children: [
-                Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
-                ),
-                Text('택시'),
-              ],
-            ),
+            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
+            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaiUc879ZIGjkzmI8UxFMkAFqzHF7gVuq8Og&usqp=CAU','오토바이'),
+            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRICrqVjMzmmrrDpmhtOqEHi10i0mlQyhLFCQ&usqp=CAU','대리'),
+            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
+
           ],
         ),
         SizedBox(
@@ -167,39 +123,9 @@ class _Page1State extends State<Page1> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Column(
-              children: [
-                Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
-                ),
-                Text('택시'),
-              ],
-            ),
-            Column(
-              children: [
-                Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
-                ),
-                Text('택시'),
-              ],
-            ),
-            Column(
-              children: [
-                Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
-                ),
-                Text('택시'),
-              ],
-            ),
+            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
+            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
+            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
             SizedBox(
               height: 80,
               width: 80,
