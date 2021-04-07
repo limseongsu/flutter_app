@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_app/4_5/image.text.dart';
+import 'package:flutter_app/4_5/vehicle.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.cyan,
       ),
       home: MyHomePage(),
     );
@@ -41,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.limeAccent,
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -53,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: _pages[_index],
+      backgroundColor: Colors.limeAccent,
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           setState(() {
@@ -60,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
           });
         },
         currentIndex: _index,
+        backgroundColor: Colors.limeAccent[400],
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             label: '홈',
@@ -85,11 +88,25 @@ class Page1 extends StatefulWidget {
 }
 
 class _Page1State extends State<Page1> {
+  final vehicles = [
+    Vehicle(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
+        '택시'),
+    Vehicle(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaiUc879ZIGjkzmI8UxFMkAFqzHF7gVuq8Og&usqp=CAU',
+        '오토바이'),
+    Vehicle(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRICrqVjMzmmrrDpmhtOqEHi10i0mlQyhLFCQ&usqp=CAU',
+        '대리'),
+    Vehicle(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
+        '택시'),
+  ];
   final dummyitems = [
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2GYqyni8EzISIFJjuE0BcxvORsMyv_iNFQ&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNPAiK49sLhYHzBIMZiqqtRn6gSZ5v9E35Cw&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCQr8y5Bf9z1jRHOXE3Ne0kVSbZ77tpKor4Q&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpe_P0mWLXhKjFBQrkudo-jqboiVXJe84HPA&usqp=CAU',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeiBIl_VM4KBl7glxywHA4R_EFyNY3W-BIxQ&usqp=CAU',
+    '',
+    '',
+    '',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST7o8_NaM5rHxg6-wRl5pFCPTKTSB6eyO0HQ&usqp=CAU'
   ];
 
@@ -109,13 +126,9 @@ class _Page1State extends State<Page1> {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
-            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaiUc879ZIGjkzmI8UxFMkAFqzHF7gVuq8Og&usqp=CAU','오토바이'),
-            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRICrqVjMzmmrrDpmhtOqEHi10i0mlQyhLFCQ&usqp=CAU','대리'),
-            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
-
-          ],
+          children: vehicles.map((e) {
+            return ImageText(e.imageUrl, e.name);
+          }).toList(),
         ),
         SizedBox(
           height: 20,
@@ -123,9 +136,15 @@ class _Page1State extends State<Page1> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
-            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
-            ImageText('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU','택시'),
+            ImageText(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
+                '택시'),
+            ImageText(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
+                '택시'),
+            ImageText(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HOfnljkolDL6gcl08VUEbp-t20ouZ82pIw&usqp=CAU',
+                '택시'),
             SizedBox(
               height: 80,
               width: 80,
@@ -139,9 +158,10 @@ class _Page1State extends State<Page1> {
   Widget _buildMiddle() {
     return CarouselSlider(
       options: CarouselOptions(
-        autoPlayInterval: Duration(milliseconds: 800),
+        autoPlayInterval: Duration(milliseconds: 1500),
         // 높이 400
-        height: 400.0,
+        height: 300.0,
+
         autoPlay: true,
       ),
       items: dummyitems.map((url) {
