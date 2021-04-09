@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-void main()  async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // 사전준비가 필요한 코드 (파이어베이스)
   await Firebase.initializeApp(); // 초기화를 하는 코드
   runApp(MyApp());
@@ -51,17 +51,31 @@ class _TodoListPageState extends State<TodoListPage> {
 
   //할 일 추가 메서드
   void _addTodo(Todo todo) {
-    setState(() {
-      _items.add(todo);
-      _todoController.text = '';
+    // 콜백  callback 방식
+    // promise 방식
+    // 단점 : 콜백지옥에 빠질 수 있다.
+    CollectionReference query = FirebaseFirestore.instance.collection('todo');
+    query.add({
+      'title': todo.title,
+      'isDone': todo.isDone,
+    }).then((value) {
+      setState(() {
+        // _items.add(todo);
+        _todoController.text = '';
+      });
+    }).catchError((error) {
+      //다이얼 로그 띄우기
     });
   }
 
   //할 일 삭제 메서드
-  void _deleteTodo(Todo todo) {
-    setState(() {
-      _items.remove(todo);
-    });
+  void _deleteTodo(DocumentSnapshot todo) {
+    CollectionReference query = FirebaseFirestore.instance.collection('todo');
+    query
+        .doc(todo.id)
+        .delete()
+        .then((value) => print('성공'))
+        .catchError((error) => print('실패'));
   }
 
   //할 일 완료/미완료 메서드
@@ -97,19 +111,20 @@ class _TodoListPageState extends State<TodoListPage> {
               ],
             ),
             StreamBuilder<QuerySnapshot>(
-              stream: query.snapshots(),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData) {
-                  return CircularProgressIndicator();
-                }
-                final documents = snapshot.data.docs;
-                return Expanded(
-                  child: ListView(
-                    children: documents.map((doc) => _buildItemWidget(doc)).toList(),
-                  ),
-                );
-              }
-            ),
+                stream: query.snapshots(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return CircularProgressIndicator();
+                  }
+                  final documents = snapshot.data.docs;
+                  return Expanded(
+                    child: ListView(
+                      children: documents
+                          .map((doc) => _buildItemWidget(doc))
+                          .toList(),
+                    ),
+                  );
+                }),
           ],
         ),
       ),
@@ -132,7 +147,7 @@ class _TodoListPageState extends State<TodoListPage> {
       ),
       trailing: IconButton(
         icon: Icon(Icons.delete_forever),
-        onPressed: () => _deleteTodo(todo), //삭제
+        onPressed: () => _deleteTodo(doc), //삭제
       ),
     );
   }
